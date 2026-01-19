@@ -1,0 +1,66 @@
+baseURL = 'https://argexpats.com/'
+languageCode = 'en-us'
+title = 'ArgExpats'
+theme = 'argexpats'
+
+# Enable robots.txt generation
+enableRobotsTXT = true
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Enable sitemap generation
+[sitemap]
+  changefreq = 'weekly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+# Enable RSS
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+# Site parameters
+[params]
+  description = 'Resources and guides for expats in Argentina'
+  author = 'ArgExpats'
+
+  # SEO
+  twitter = '@argexpats'
+  images = ['/images/og-image.jpg']
+
+  # Features
+  showReadingTime = true
+  showPostDate = true
+
+# Permalinks
+[permalinks]
+  posts = '/posts/:slug/'
+  projects = '/projects/:slug/'
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'dracula'
+    lineNos = false
+    lineNumbersInTable = false
+    tabWidth = 2
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = 'Posts'
+    url = '/posts/'
+    weight = 1
+  [[menu.main]]
+    name = 'Projects'
+    url = '/projects/'
+    weight = 2
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 3

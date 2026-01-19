@@ -1,0 +1,70 @@
+# Security and caching headers for Cloudflare Pages
+
+/*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';
+
+/css/*
+  # Cache CSS for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  # Cache JavaScript for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  # Cache fonts for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  # Cache images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  # Cache JPG images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  # Cache JPEG images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  # Cache PNG images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  # Cache WebP images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  # Cache SVG images for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  # Cache WOFF fonts for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  # Cache WOFF2 fonts for 1 year
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.xml
+  # Cache RSS feed for 1 hour
+  Cache-Control: public, max-age=3600
+  Content-Type: application/rss+xml; charset=utf-8
+
+/sitemap.xml
+  # Cache sitemap for 1 day
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  # Cache robots.txt for 1 day
+  Cache-Control: public, max-age=86400

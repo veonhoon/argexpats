@@ -1,0 +1,12 @@
+name = "ArgExpats"
+license = "MIT"
+licenselink = "https://github.com/yourusername/argexpats/blob/main/LICENSE"
+description = "A minimal, distraction-free theme for ArgExpats.com"
+homepage = "https://argexpats.com/"
+tags = ["blog", "minimal", "clean", "responsive", "dark-mode"]
+features = ["blog", "dark-mode", "seo", "responsive"]
+min_version = "0.100.0"
+
+[author]
+  name = "ArgExpats"
+  homepage = "https://argexpats.com/"

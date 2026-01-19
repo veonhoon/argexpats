@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="fade-in">
+  <header class="section-page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="section-description">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ if .Pages }}
+  <div class="post-list">
+    {{ range .Pages }}
+    <article class="post-card">
+      <div class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+        {{ if .Site.Params.showReadingTime }}
+        <span class="separator">•</span>
+        <span class="reading-time">{{ .ReadingTime }} min read</span>
+        {{ end }}
+      </div>
+      <h2 class="post-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
+      {{ with .Summary }}
+      <p class="post-summary">{{ . }}</p>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+
+  {{ $paginator := .Paginate .Pages }}
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="pagination-prev">← Newer</a>
+    {{ end }}
+
+    <span class="pagination-info">
+      Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+    </span>
+
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="pagination-next">Older →</a>
+    {{ end }}
+  </nav>
+  {{ end }}
+
+  {{ else }}
+  <p class="no-content">No posts yet. Check back soon!</p>
+  {{ end }}
+</div>
+{{ end }}

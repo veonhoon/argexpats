@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="fade-in">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="hero-title">{{ .Site.Title }}</h1>
+    <p class="hero-description">{{ .Site.Params.description }}</p>
+  </section>
+
+  <!-- Latest Posts -->
+  <section class="posts-section">
+    <div class="section-header">
+      <h2>Latest Posts</h2>
+      <a href="/posts/" class="view-all">View all →</a>
+    </div>
+
+    {{ $posts := where .Site.RegularPages "Section" "posts" | first 5 }}
+    {{ if $posts }}
+    <div class="post-list">
+      {{ range $posts }}
+      <article class="post-card">
+        <div class="post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "Jan 2, 2006" }}
+          </time>
+          {{ if .Site.Params.showReadingTime }}
+          <span class="separator">•</span>
+          <span class="reading-time">{{ .ReadingTime }} min read</span>
+          {{ end }}
+        </div>
+        <h3 class="post-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        {{ with .Summary }}
+        <p class="post-summary">{{ . }}</p>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="no-content">No posts yet. Check back soon!</p>
+    {{ end }}
+  </section>
+
+  <!-- Projects -->
+  <section class="projects-section">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <a href="/projects/" class="view-all">View all →</a>
+    </div>
+
+    {{ $projects := where .Site.RegularPages "Section" "projects" | first 4 }}
+    {{ if $projects }}
+    <div class="project-grid">
+      {{ range $projects }}
+      <article class="project-card">
+        <h3 class="project-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        {{ with .Params.description }}
+        <p class="project-description">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.tech }}
+        <div class="project-tech">
+          {{ range . }}
+          <span class="tech-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="no-content">No projects yet. Check back soon!</p>
+    {{ end }}
+  </section>
+</div>
+{{ end }}

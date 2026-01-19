@@ -1,0 +1,33 @@
+OPEN GRAPH IMAGE INSTRUCTIONS
+=============================
+
+The site is configured to use /images/og-image.jpg for social media sharing.
+
+To add your Open Graph image:
+
+1. Create an image with dimensions 1200x630 pixels (recommended by Facebook/Twitter)
+2. Save it as "og-image.jpg"
+3. Place it in this directory: /static/images/
+
+This image will appear when your site is shared on:
+- Facebook
+- Twitter
+- LinkedIn
+- WhatsApp
+- Other social platforms
+
+Tips:
+- Use clear, high-contrast text if including text
+- Avoid placing important content near edges (may be cropped)
+- Keep file size under 1MB for fast loading
+- Use JPG for photos, PNG for graphics with transparency
+
+You can create OG images using:
+- Canva: https://www.canva.com/
+- Figma: https://www.figma.com/
+- Adobe Express: https://www.adobe.com/express/
+
+You can also create per-post OG images by adding to frontmatter:
+---
+image: "/images/posts/my-post-og-image.jpg"
+---

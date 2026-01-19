@@ -1,0 +1,16 @@
+# Redirects for Cloudflare Pages
+
+# Redirect /feed to RSS feed
+/feed /index.xml 301
+
+# Redirect /rss to RSS feed
+/rss /index.xml 301
+
+# Redirect trailing slashes (optional - Hugo typically handles this)
+# /posts/* /posts/:splat 301
+
+# Example: Redirect old blog paths to new structure (customize as needed)
+# /blog/* /posts/:splat 301
+
+# Catch-all 404 page (Hugo generates this automatically)
+# /* /404.html 404

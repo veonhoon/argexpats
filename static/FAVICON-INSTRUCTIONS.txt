@@ -1,0 +1,23 @@
+FAVICON INSTRUCTIONS
+====================
+
+To add a favicon to your site:
+
+1. Create or obtain a favicon image (32x32 or 64x64 pixels recommended)
+2. Convert it to PNG format
+3. Name it "favicon.png"
+4. Place it in this directory: /static/
+
+The site is already configured to use /favicon.png (see head.html partial).
+
+You can use online tools like:
+- https://favicon.io/ (generate from text, image, or emoji)
+- https://realfavicongenerator.net/ (comprehensive favicon generator)
+
+For best results, provide multiple sizes:
+- favicon.ico (16x16, 32x32, 48x48)
+- apple-touch-icon.png (180x180)
+- favicon-32x32.png
+- favicon-16x16.png
+
+Then update the head.html partial to reference all sizes.
